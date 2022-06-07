@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\UniqueAdoptionPet;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAdoptionRequest extends FormRequest
+class StorePetRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +24,9 @@ class StoreAdoptionRequest extends FormRequest
     public function rules()
     {
         return [
-            'email'   => ['required', 'email', new UniqueAdoptionPet($this->pet_id ?? 0)],
-            'value'   => 'required|numeric|between:10,100',
-            'pet_id'  => 'required|int|exists:pets,id',
+            'name' => 'required|string|between:3,100',
+            'history' => 'required|string',
+            'picture' => 'required|url|max:1000',
         ];
     }
 }
