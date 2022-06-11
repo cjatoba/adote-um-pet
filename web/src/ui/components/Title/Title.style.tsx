@@ -10,6 +10,8 @@ export const Subtitle = styled('h2')`
   font-size: 18px;
   text-align: center;
   margin-bottom: ${({ theme }) => theme.spacing(5)};
+  padding-left: ${({ theme }) => theme.spacing(3)};
+  padding-right: ${({ theme }) => theme.spacing(3)};
   font-weight: normal;
   color: ${({ theme }) => theme.palette.text.secondary};
 `;

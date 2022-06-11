@@ -7,7 +7,7 @@ export function useIndex() {
     const [petsList, setPetsList] = useState<Pet[]>([]),
     [selectedPet, setSelectedPet] = useState<Pet | null>(null),
     [email, setEmail] = useState<string>(''),
-    [value, setValue] = useState<number>(0),
+    [value, setValue] = useState<string>(''),
     [message, setMessage] = useState<string>('');
 
     useEffect(() => {
@@ -45,12 +45,12 @@ export function useIndex() {
     }
 
     function validateAdoptionData() {
-        return email.length > 0 && value.toString.length > 0;
+        return email.length > 0 && value.length > 0;
     }
 
     function formClear() {
         setEmail('');
-        setValue(0);
+        setValue('');
     }
 
     return {
